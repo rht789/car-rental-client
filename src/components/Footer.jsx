@@ -15,7 +15,11 @@ const Footer = () => {
           {/* 1. Brand Section */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <span className="text-3xl">🚗</span>
+              <img
+                src="/logo.png"
+                alt="RentWheels Logo"
+                className="w-10 h-10"
+              />
               <h2 className="text-2xl font-heading font-bold text-neutral">
                 Rent<span className="text-primary">Wheels</span>
               </h2>

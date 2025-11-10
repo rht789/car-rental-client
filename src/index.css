@@ -5,38 +5,35 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "rentwheels";
+  name: "light";
   default: true;
-  prefers-dark: false;
-  color-scheme: light;
+  /* DaisyUI Color Variables */
+  --color-primary: #2563eb; /* Royal Blue - main brand color */
+  --color-primary-dark: #1e40af; /* Darker blue for hover states */
+  --color-primary-light: #dbeafe; /* Light blue for backgrounds */
 
-  primary: #2563eb;
-  primary-dark: #1e40af;
-  primary-light: #dbeafe;
+  --color-secondary: #f59e0b; /* Amber/Orange - secondary actions */
+  --color-secondary-dark: #d97706; /* Darker amber for hover */
+  --color-secondary-light: #fef3c7; /* Light amber for backgrounds */
 
-  secondary: #f59e0b;
-  secondary-dark: #d97706;
-  secondary-light: #fef3c7;
+  --color-accent: #10b981; /* Emerald Green - success states */
+  --color-accent-dark: #059669; /* Darker green for hover */
+  --color-accent-light: #d1fae5; /* Light green for backgrounds */
 
-  accent: #10b981;
-  accent-dark: #059669;
-  accent-light: #d1fae5;
+  --color-neutral: #1f2937; /* Dark Gray - primary text */
+  --color-neutral-content: #ffffff; /* White text on neutral bg */
 
-  neutral: #1f2937;
-  neutral-content: #ffffff;
+  --color-base-100: #ffffff; /* Pure White - main background */
+  --color-base-200: #f9fafb; /* Very Light Gray - section backgrounds */
+  --color-base-300: #f3f4f6; /* Light Gray - borders, dividers */
+  --color-base-content: #1f2937; /* Dark text on base backgrounds */
 
-  base-100: #ffffff;
-  base-200: #f9fafb;
-  base-300: #f3f4f6;
-  base-content: #1f2937;
+  --color-info: #3b82f6; /* Blue - informational messages */
+  --color-success: #10b981; /* Green - success messages */
+  --color-warning: #f59e0b; /* Orange - warning messages */
+  --color-error: #ef4444; /* Red - error messages */
 
-  info: #3b82f6;
-  success: #10b981;
-  warning: #f59e0b;
-  error: #ef4444;
-}
-
-@theme {
+  /* Font Variables */
   --font-heading: "Poppins", sans-serif;
   --font-body: "Inter", sans-serif;
 }
