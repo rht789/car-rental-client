@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content mt-auto">
       {/* Gradient accent line at top */}
-      <div className="h-1 bg-gradient-to-r from-primary to-primary-dark animate-pulse"></div>
+      <div className="h-1 bg-linear-to-r from-primary to-primary-dark animate-pulse"></div>
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-16">
