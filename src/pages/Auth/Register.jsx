@@ -16,7 +16,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, loginUserwithGoogle, updateUserProfile } =
     use(AuthContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Register - RentWheels";
