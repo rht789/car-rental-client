@@ -8,7 +8,7 @@ import AddCar from "../pages/AddCar/AddCar";
 import PrivateRoute from "./PrivateRoutes";
 import MyListings from "../pages/MyListings/MyListings";
 import BrowseCars from "../pages/BrowseCars/BrowseCars";
-
+import LearnMore from "../pages/LearnMore/LearnMore";
 
 const router = createBrowserRouter([
   {
@@ -17,33 +17,45 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: Home
+        Component: Home,
       },
       {
         path: "/login",
-        Component: Login
+        Component: Login,
       },
       {
         path: "/register",
-        Component: Register
+        Component: Register,
       },
       {
         path: "/add-car",
-        element: <PrivateRoute><AddCar /></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <AddCar />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-listings",
-        element: <PrivateRoute><MyListings /></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <MyListings />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/browse",
-        Component: BrowseCars
-      }
+        Component: BrowseCars,
+      },
+      {
+        path: "/learn-more",
+        Component: LearnMore,
+      },
     ],
   },
   {
     path: "*",
-    Component: Error404
-  }
+    Component: Error404,
+  },
 ]);
 export default router;

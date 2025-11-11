@@ -44,50 +44,24 @@ const BrowseCars = () => {
           </p>
         </div>
 
-        {/* Filter/Search Bar (Static) */}
+        {/* Search Bar */}
         <div className="bg-base-100 rounded-2xl shadow-xl border-2 border-base-300 p-6 mb-12">
-          <div className="flex flex-col md:flex-row gap-4">
-            {/* Search Input */}
-            <div className="form-control flex-1">
-              <label className="label">
-                <span className="label-text text-neutral font-body font-medium">
-                  Search by car name
-                </span>
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="e.g., Toyota, BMW, Tesla..."
-                  className="input input-bordered bg-base-100 border-base-300 w-full h-12 pl-10 text-neutral placeholder:text-neutral-light font-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                />
-                <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-medium" />
-              </div>
-            </div>
-
-            {/* Category Dropdown */}
-            <div className="form-control flex-1">
-              <label className="label">
-                <span className="label-text text-neutral font-body font-medium">
-                  Category
-                </span>
-              </label>
-              <select className="select select-bordered bg-base-100 border-base-300 w-full h-12 text-neutral font-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20">
-                <option value="">All Categories</option>
-                <option value="Sedan">Sedan</option>
-                <option value="SUV">SUV</option>
-                <option value="Hatchback">Hatchback</option>
-                <option value="Luxury">Luxury</option>
-                <option value="Electric">Electric</option>
-              </select>
+          <div className="flex items-center gap-4">
+            {/* Search Input - Full Width */}
+            <div className="relative flex-1">
+              <input
+                type="text"
+                placeholder="Search for cars by name, brand, or model..."
+                className="input input-bordered bg-base-100 border-base-300 w-full h-14 pl-12 pr-4 text-neutral placeholder:text-neutral-light font-body text-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-medium text-xl" />
             </div>
 
             {/* Search Button */}
-            <div className="form-control md:pt-8">
-              <button className="btn btn-primary h-12 px-8 text-base font-body font-semibold text-white border-0 hover:scale-105 transition-all duration-300">
-                <FaSearch className="mr-2" />
-                Search
-              </button>
-            </div>
+            <button className="btn btn-primary h-14 px-8 text-base font-body font-semibold text-white border-0 hover:scale-105 transition-all duration-300">
+              <FaSearch className="mr-2" />
+              Search
+            </button>
           </div>
         </div>
 

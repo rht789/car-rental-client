@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
+import HeroBanner from "./Sections/HeroBanner";
+import SearchFilterBar from "./Sections/SearchFilterBar";
+import FeaturedCars from "./Sections/FeaturedCars";
+import WhyRentWithUs from "./Sections/WhyRentWithUs";
+import TopRatedCars from "./Sections/TopRatedCars";
+import CustomerTestimonials from "./Sections/CustomerTestimonials";
+import Newsletter from "./Sections/Newsletter";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home - RentWheels";
+  }, []);
+
   return (
     <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
-        <h1 className="text-3xl md:text-5xl font-bold font-heading text-neutral">
-          Welcome to <span className="text-primary">RentWheels</span>
-        </h1>
-        <p className="text-base md:text-lg font-body text-neutral-medium mt-4">
-          Your premium car rental platform
-        </p>
-      </div>
+      {/* 1. Hero Banner / Slider */}
+      <HeroBanner />
+
+      {/* 2. Search & Filter Bar */}
+      <SearchFilterBar />
+
+      {/* 3. Featured Cars (Dynamic) */}
+      <FeaturedCars />
+
+      {/* 4. Why Rent With Us */}
+      <WhyRentWithUs />
+
+      {/* 5. Top Rated Cars (Dynamic) */}
+      <TopRatedCars />
+
+      {/* 6. Customer Testimonials */}
+      <CustomerTestimonials />
+
+      {/* 7. Newsletter / Call-To-Action */}
+      <Newsletter />
     </div>
   );
 };
