@@ -1,4 +1,4 @@
-import React, { useEffect, useState, use } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -16,21 +16,16 @@ import {
 import toast from "react-hot-toast";
 import useAxios from "../../hooks/useAxios";
 import Loader from "../../components/Loader";
-import AuthContext from "../../contexts/AuthContext";
+import CarBooking from "./CarBooking";
 
 const CarDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const axios = useAxios();
-  const { user } = use(AuthContext);
 
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
-
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [bookingLoading, setBookingLoading] = useState(false);
 
   useEffect(() => {
     fetchCarDetails();
@@ -54,81 +49,6 @@ const CarDetails = () => {
       navigate("/browse");
     } finally {
       setLoading(false);
-    }
-  };
-
-  const calculateTotalPrice = () => {
-    if (!startDate || !endDate || !car) return 0;
-
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
-
-    return days > 0 ? days * Number(car.rentPrice) : 0;
-  };
-
-  const handleBooking = async (e) => {
-    e.preventDefault();
-
-    if (!user) {
-      toast.error("Please login to book a car");
-      navigate("/login", { state: `/car-details/${id}` });
-      return;
-    }
-
-    if (user.email === car.providerEmail) {
-      toast.error("You cannot book your own car");
-      return;
-    }
-
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    if (start < today) {
-      toast.error("Start date cannot be in the past");
-      return;
-    }
-
-    if (end <= start) {
-      toast.error("End date must be after start date");
-      return;
-    }
-
-    const totalPrice = calculateTotalPrice();
-    const days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
-
-    const bookingData = {
-      carId: car._id,
-      carName: car.carName,
-      carImage: car.imageURL,
-      rentPrice: car.rentPrice,
-      providerId: car.providerId,
-      providerName: car.providerName,
-      providerEmail: car.providerEmail,
-      renterId: user.uid,
-      renterName: user.displayName,
-      renterEmail: user.email,
-      startDate: startDate,
-      endDate: endDate,
-      totalDays: days,
-      totalPrice: totalPrice,
-      status: "Confirmed",
-      bookingDate: new Date().toISOString(),
-    };
-
-    try {
-      setBookingLoading(true);
-      await axios.post("/bookings", bookingData);
-      toast.success("Car booked successfully!");
-      setBookingModalOpen(false);
-      navigate("/my-bookings");
-    } catch (error) {
-      console.error("Booking failed:", error);
-      toast.error("Booking failed. Please try again.");
-    } finally {
-      setBookingLoading(false);
     }
   };
 
@@ -379,110 +299,11 @@ const CarDetails = () => {
         </div>
       </div>
 
-      {bookingModalOpen && (
-        <dialog open className="modal modal-open">
-          <div className="modal-box max-w-md bg-base-100 border-2 border-base-300 shadow-2xl">
-            <div className="bg-primary px-6 py-4 -mx-6 -mt-6 mb-6">
-              <h3 className="font-heading font-bold text-xl text-white">
-                Book {car.carName}
-              </h3>
-              <p className="text-white/90 font-body text-sm mt-1">
-                Select your rental dates
-              </p>
-            </div>
-
-            <form onSubmit={handleBooking} className="space-y-6">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-neutral font-body font-medium">
-                    Start Date <span className="text-error">*</span>
-                  </span>
-                </label>
-                <input
-                  type="date"
-                  value={startDate}
-                  onChange={(e) => setStartDate(e.target.value)}
-                  min={new Date().toISOString().split("T")[0]}
-                  required
-                  className="input input-bordered bg-base-100 border-base-300 w-full h-12 text-neutral font-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-neutral font-body font-medium">
-                    End Date <span className="text-error">*</span>
-                  </span>
-                </label>
-                <input
-                  type="date"
-                  value={endDate}
-                  onChange={(e) => setEndDate(e.target.value)}
-                  min={
-                    startDate ||
-                    new Date(Date.now() + 86400000).toISOString().split("T")[0]
-                  }
-                  required
-                  className="input input-bordered bg-base-100 border-base-300 w-full h-12 text-neutral font-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-
-              {startDate && endDate && calculateTotalPrice() > 0 && (
-                <div className="bg-base-200 rounded-xl p-4 space-y-2">
-                  <div className="flex justify-between text-neutral-medium font-body">
-                    <span>Daily Rate:</span>
-                    <span>৳{Number(car.rentPrice).toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between text-neutral-medium font-body">
-                    <span>Number of Days:</span>
-                    <span>
-                      {Math.ceil(
-                        (new Date(endDate) - new Date(startDate)) /
-                          (1000 * 60 * 60 * 24)
-                      )}
-                    </span>
-                  </div>
-                  <div className="border-t border-base-300 pt-2 mt-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-body font-semibold text-neutral">
-                        Total Price:
-                      </span>
-                      <span className="text-2xl font-heading font-bold text-primary">
-                        ৳{calculateTotalPrice().toLocaleString()}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => setBookingModalOpen(false)}
-                  className="btn btn-ghost flex-1 h-12 font-body font-semibold text-neutral hover:bg-base-200"
-                  disabled={bookingLoading}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={bookingLoading}
-                  className="btn btn-primary flex-1 h-12 font-body font-semibold text-white border-0"
-                >
-                  {bookingLoading ? (
-                    <span className="loading loading-spinner"></span>
-                  ) : (
-                    "Confirm Booking"
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-          <form method="dialog" className="modal-backdrop">
-            <button onClick={() => setBookingModalOpen(false)}>close</button>
-          </form>
-        </dialog>
-      )}
+      <CarBooking
+        car={car}
+        isOpen={bookingModalOpen}
+        onClose={() => setBookingModalOpen(false)}
+      />
     </div>
   );
 };

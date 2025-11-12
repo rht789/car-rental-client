@@ -31,7 +31,7 @@ const AddCar = () => {
       providerId: user?.uid,
       providerName: user?.displayName || "Unknown User",
       providerEmail: user?.email,
-      dateAdded: new Date().toISOString(),
+      dateAdded: new Date().toISOString().split("T")[0],
     };
 
     try {

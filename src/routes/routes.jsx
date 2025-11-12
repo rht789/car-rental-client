@@ -7,6 +7,7 @@ import Error404 from "../components/error404";
 import AddCar from "../pages/AddCar/AddCar";
 import PrivateRoute from "./PrivateRoutes";
 import MyListings from "../pages/MyListings/MyListings";
+import MyBookings from "../pages/MyBookings/MyBookings";
 import BrowseCars from "../pages/BrowseCars/BrowseCars";
 import LearnMore from "../pages/LearnMore/LearnMore";
 import CarDetails from "../pages/CarDetails/CarDetails";
@@ -45,12 +46,20 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/my-bookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/browse",
         Component: BrowseCars,
       },
       {
         path: "/car-details/:id",
-        Component: CarDetails,
+        element: <PrivateRoute><CarDetails /></PrivateRoute>,
       },
       {
         path: "/learn-more",

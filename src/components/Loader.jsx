@@ -5,7 +5,6 @@ const Loader = () => {
     <div className="min-h-screen flex items-center justify-center bg-transparent">
       <div className="text-center">
         <div className="relative">
-
           <div className="flex justify-center items-center">
             <div className="relative">
               <img
