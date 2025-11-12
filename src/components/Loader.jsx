@@ -4,10 +4,8 @@ const Loader = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-transparent">
       <div className="text-center">
-        {/* Animated Logo */}
         <div className="relative">
 
-          {/* Logo spinning animation */}
           <div className="flex justify-center items-center">
             <div className="relative">
               <img
@@ -19,7 +17,6 @@ const Loader = () => {
           </div>
         </div>
 
-        {/* Loading text */}
         <div className="space-y-3">
           <h3 className="text-2xl font-heading font-bold text-neutral">
             Loading<span className="animate-pulse">...</span>
@@ -29,7 +26,6 @@ const Loader = () => {
           </p>
         </div>
 
-        {/* Spinner dots */}
         <div className="flex justify-center items-center gap-2 mt-6">
           <div className="w-3 h-3 bg-primary rounded-full animate-bounce-delay-0"></div>
           <div className="w-3 h-3 bg-secondary rounded-full animate-bounce-delay-150"></div>

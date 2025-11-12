@@ -14,25 +14,18 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* 1. Hero Banner / Slider */}
       <HeroBanner />
 
-      {/* 2. Search & Filter Bar */}
       <SearchFilterBar />
 
-      {/* 3. Featured Cars (Dynamic) */}
       <FeaturedCars />
 
-      {/* 4. Why Rent With Us */}
       <WhyRentWithUs />
 
-      {/* 5. Top Rated Cars (Dynamic) */}
       <TopRatedCars />
 
-      {/* 6. Customer Testimonials */}
       <CustomerTestimonials />
 
-      {/* 7. Newsletter / Call-To-Action */}
       <Newsletter />
     </div>
   );

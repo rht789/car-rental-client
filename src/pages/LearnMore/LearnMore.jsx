@@ -62,7 +62,6 @@ const LearnMore = () => {
 
   return (
     <div className="min-h-screen bg-base-100">
-      {/* Hero Section */}
       <section className="relative bg-linear-to-br from-primary via-primary-dark to-info text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg width="100%" height="100%">
@@ -115,7 +114,6 @@ const LearnMore = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -161,7 +159,6 @@ const LearnMore = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-16 px-6 bg-base-200">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -204,7 +201,6 @@ const LearnMore = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div

@@ -69,7 +69,6 @@ const WhyRentWithUs = () => {
   return (
     <section className="py-16 px-6 bg-linear-to-br from-base-100 to-base-200">
       <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -95,7 +94,6 @@ const WhyRentWithUs = () => {
           </p>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -114,7 +112,6 @@ const WhyRentWithUs = () => {
               }}
               className="bg-white rounded-2xl p-6 border-2 border-base-300 hover:border-primary/30 transition-all duration-300"
             >
-              {/* Icon */}
               <motion.div
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
@@ -123,12 +120,10 @@ const WhyRentWithUs = () => {
                 <feature.icon className={`text-3xl ${feature.color}`} />
               </motion.div>
 
-              {/* Title */}
               <h3 className="text-xl font-heading font-bold text-neutral mb-3">
                 {feature.title}
               </h3>
 
-              {/* Description */}
               <p className="text-base text-neutral-medium font-body leading-relaxed">
                 {feature.description}
               </p>

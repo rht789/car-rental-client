@@ -105,9 +105,7 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50">
       <div className="navbar bg-base-100 shadow-md border-b border-base-300 h-16 md:h-20 px-4 md:px-8">
-        {/* Navbar Start - Logo & Mobile Menu */}
         <div className="navbar-start">
-          {/* Mobile Hamburger Dropdown */}
           <div className="dropdown">
             <div
               tabIndex={0}
@@ -149,7 +147,6 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Logo and Brand Name */}
           <Link
             to="/"
             className="btn btn-ghost text-xl md:text-2xl font-heading font-bold hover:scale-105 transition-transform duration-300 normal-case"
@@ -165,12 +162,10 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Navbar Center - Desktop Navigation Links */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 gap-2">{links}</ul>
         </div>
 
-        {/* Navbar End - Login Button / User Avatar Dropdown */}
         <div className="navbar-end">
           {loading ? (
             <div className="flex items-center gap-2">

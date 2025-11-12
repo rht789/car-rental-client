@@ -86,7 +86,6 @@ const MyListings = () => {
   return (
     <div className="min-h-screen py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="mb-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
@@ -105,7 +104,6 @@ const MyListings = () => {
             </button>
           </div>
 
-          {/* Stats Section */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
             <div className="bg-base-100 rounded-xl p-6 border-2 border-base-300 shadow-lg">
               <div className="flex items-center gap-3">
@@ -158,7 +156,6 @@ const MyListings = () => {
           </div>
         </div>
 
-        {/* Listings Grid */}
         {cars.length === 0 ? (
           <div className="bg-base-100 rounded-2xl border-2 border-base-300 shadow-xl p-12 text-center">
             <div className="max-w-md mx-auto">
@@ -187,7 +184,6 @@ const MyListings = () => {
                 key={car._id}
                 className="bg-base-100 rounded-2xl border-2 border-base-300 shadow-xl overflow-hidden hover:shadow-2xl hover:border-primary/30 transition-all duration-300 group"
               >
-                {/* Car Image */}
                 <div className="relative h-48 overflow-hidden bg-base-200">
                   <img
                     src={car.imageURL}
@@ -212,19 +208,15 @@ const MyListings = () => {
                   </div>
                 </div>
 
-                {/* Card Content */}
                 <div className="p-6">
-                  {/* Car Name */}
                   <h3 className="text-xl font-heading font-bold text-neutral mb-2 line-clamp-1">
                     {car.carName}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-sm text-neutral-medium font-body mb-4 line-clamp-2 leading-relaxed">
                     {car.description}
                   </p>
 
-                  {/* Location */}
                   <div className="flex items-center gap-2 mb-4">
                     <FaMapMarkerAlt className="text-neutral-medium" />
                     <span className="text-sm text-neutral-medium font-body">
@@ -232,7 +224,6 @@ const MyListings = () => {
                     </span>
                   </div>
 
-                  {/* Price */}
                   <div className="bg-secondary/10 rounded-xl p-4 mb-4 border border-secondary/20">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-neutral-medium font-body">
@@ -249,7 +240,6 @@ const MyListings = () => {
                     </div>
                   </div>
 
-                  {/* Date Added */}
                   <div className="mb-4 pb-4 border-b border-base-300">
                     <p className="text-xs text-neutral-light font-body">
                       Listed on{" "}
@@ -261,7 +251,6 @@ const MyListings = () => {
                     </p>
                   </div>
 
-                  {/* Action Buttons */}
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => handleUpdate(car)}
@@ -283,7 +272,6 @@ const MyListings = () => {
         )}
       </div>
 
-      {/* Update Car Modal */}
       <UpdateCarModal
         car={selectedCar}
         isOpen={openUpdateModal}
@@ -291,11 +279,9 @@ const MyListings = () => {
         onUpdate={fetchMyCars}
       />
 
-      {/* Delete Confirmation Modal */}
       {openDeleteModal && selectedCar && (
         <dialog open className="modal modal-open">
           <div className="modal-box bg-base-100 border-2 border-base-300 shadow-2xl max-w-md">
-            {/* Modal Header */}
             <div className="text-center mb-6">
               <div className="w-20 h-20 bg-error/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaTrashAlt className="text-5xl text-error" />
@@ -308,7 +294,6 @@ const MyListings = () => {
               </p>
             </div>
 
-            {/* Car Info */}
             <div className="bg-base-200 rounded-xl p-4 mb-6">
               <div className="flex items-center gap-4">
                 <img
@@ -333,7 +318,6 @@ const MyListings = () => {
               removed from the platform.
             </p>
 
-            {/* Action Buttons */}
             <div className="modal-action justify-center gap-3">
               <button
                 onClick={closeDeleteModal}

@@ -114,7 +114,6 @@ const CustomerTestimonials = () => {
   return (
     <section className="py-16 px-6 bg-linear-to-br from-base-100 via-primary/5 to-base-100">
       <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,14 +138,12 @@ const CustomerTestimonials = () => {
           </p>
         </motion.div>
 
-        {/* Loading State */}
         {loading && (
           <div className="flex justify-center py-12">
             <span className="loading loading-spinner loading-lg text-primary"></span>
           </div>
         )}
 
-        {/* Testimonials Grid */}
         {!loading && (
           <motion.div
             variants={containerVariants}
@@ -165,14 +162,11 @@ const CustomerTestimonials = () => {
                 }}
                 className="bg-white rounded-2xl p-8 border-2 border-base-300 relative overflow-hidden"
               >
-                {/* Quote Icon Background */}
                 <div className="absolute top-4 right-4 opacity-5">
                   <FaQuoteLeft className="text-8xl text-primary" />
                 </div>
 
-                {/* Content */}
                 <div className="relative z-10">
-                  {/* Avatar & Info */}
                   <div className="flex items-center gap-4 mb-4">
                     <motion.img
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -190,7 +184,6 @@ const CustomerTestimonials = () => {
                     </div>
                   </div>
 
-                  {/* Rating Stars */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, index) => (
                       <motion.div
@@ -205,7 +198,6 @@ const CustomerTestimonials = () => {
                     ))}
                   </div>
 
-                  {/* Testimonial Text */}
                   <p className="text-base text-neutral-medium font-body leading-relaxed">
                     "{testimonial.text}"
                   </p>

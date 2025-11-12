@@ -12,7 +12,6 @@ const Error404 = () => {
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-12">
       <div className="max-w-2xl w-full text-center">
         <div className="bg-base-100 rounded-2xl shadow-2xl p-8 md:p-12 border border-base-300">
-          {/* Animated Car Icon */}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <FaCar className="text-secondary text-8xl md:text-9xl animate-bounce" />
@@ -20,12 +19,10 @@ const Error404 = () => {
             </div>
           </div>
 
-          {/* 404 Text */}
           <h1 className="text-7xl md:text-9xl font-heading font-bold text-primary mb-4">
             404
           </h1>
 
-          {/* Error Message */}
           <h2 className="text-2xl md:text-3xl font-heading font-semibold text-neutral mb-3">
             Oops! Road Not Found
           </h2>
@@ -34,7 +31,6 @@ const Error404 = () => {
             looking for might have taken a different turn!
           </p>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/"
@@ -52,7 +48,6 @@ const Error404 = () => {
             </Link>
           </div>
 
-          {/* Additional Info */}
           <div className="mt-10 pt-8 border-t border-base-300">
             <p className="text-sm text-neutral-medium font-body">
               Need help?{" "}
@@ -66,7 +61,6 @@ const Error404 = () => {
           </div>
         </div>
 
-        {/* Decorative Elements */}
         <div className="mt-8 flex justify-center gap-3 opacity-30">
           <FaCar className="text-primary text-2xl" />
           <FaCar className="text-secondary text-2xl" />

@@ -25,14 +25,11 @@ const Newsletter = () => {
 
   return (
     <section className="relative py-20 px-6 overflow-hidden">
-      {/* Gradient Background using theme colors */}
       <div className="absolute inset-0 bg-linear-to-br from-primary via-primary-dark to-info"></div>
 
-      {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
-      {/* Pattern Overlay */}
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%">
           <pattern
@@ -49,9 +46,7 @@ const Newsletter = () => {
         </svg>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Icon */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           whileInView={{ scale: 1, rotate: 0 }}
@@ -62,7 +57,6 @@ const Newsletter = () => {
           <FaEnvelope className="text-4xl text-white" />
         </motion.div>
 
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +67,6 @@ const Newsletter = () => {
           Stay in the Loop!
         </motion.h2>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +78,6 @@ const Newsletter = () => {
           straight to your inbox.
         </motion.p>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubscribe}
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +110,6 @@ const Newsletter = () => {
           </motion.button>
         </motion.form>
 
-        {/* Benefits */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -140,7 +131,6 @@ const Newsletter = () => {
           </div>
         </motion.div>
 
-        {/* Privacy Text */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

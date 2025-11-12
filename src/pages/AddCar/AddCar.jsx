@@ -56,7 +56,6 @@ const AddCar = () => {
   return (
     <div className="min-h-screen py-12 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center gap-3 mb-4 bg-primary/10 px-6 py-3 rounded-full">
             <h1 className="text-3xl md:text-4xl font-heading font-bold text-neutral">
@@ -77,9 +76,7 @@ const AddCar = () => {
           </div>
         </div>
 
-        {/* Main Form Card */}
         <div className="bg-base-100 rounded-2xl shadow-2xl border border-base-300 overflow-hidden">
-          {/* Card Header */}
           <div className="bg-linear-to-r from-primary to-primary/80 px-6 md:px-8 py-6">
             <h2 className="text-xl md:text-2xl font-heading font-bold text-white flex items-center gap-3">
               Car Information
@@ -89,9 +86,7 @@ const AddCar = () => {
             </p>
           </div>
 
-          {/* Form Content */}
           <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-8">
-            {/* Basic Information Section */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1 h-6 bg-primary rounded-full"></div>
@@ -100,7 +95,6 @@ const AddCar = () => {
                 </h3>
               </div>
 
-              {/* Car Name */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-neutral font-body font-medium">
@@ -117,7 +111,6 @@ const AddCar = () => {
                 />
               </div>
 
-              {/* Description */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-neutral font-body font-medium">
@@ -138,7 +131,6 @@ const AddCar = () => {
               </div>
             </div>
 
-            {/* Category and Pricing Section */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1 h-6 bg-secondary rounded-full"></div>
@@ -148,7 +140,6 @@ const AddCar = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Category */}
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-neutral font-body font-medium">
@@ -172,7 +163,6 @@ const AddCar = () => {
                   </select>
                 </div>
 
-                {/* Rent Price */}
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-neutral font-body font-medium">
@@ -201,7 +191,6 @@ const AddCar = () => {
               </div>
             </div>
 
-            {/* Location and Image Section */}
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1 h-6 bg-accent rounded-full"></div>
@@ -210,7 +199,6 @@ const AddCar = () => {
                 </h3>
               </div>
 
-              {/* Location */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-neutral font-body font-medium">
@@ -232,7 +220,6 @@ const AddCar = () => {
                 </label>
               </div>
 
-              {/* Image URL */}
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-neutral font-body font-medium">
@@ -258,7 +245,6 @@ const AddCar = () => {
               </div>
             </div>
 
-            {/* Provider Information Section */}
             <div className="bg-linear-to-br from-base-200 to-base-300 rounded-xl p-6 border-2 border-base-300 shadow-inner">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1 h-6 bg-neutral rounded-full"></div>
@@ -270,7 +256,6 @@ const AddCar = () => {
                 This information is automatically filled from your account
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Provider Name */}
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-neutral-medium font-body text-xs font-medium">
@@ -287,7 +272,6 @@ const AddCar = () => {
                   />
                 </div>
 
-                {/* Provider Email */}
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-neutral-medium font-body text-xs font-medium">
@@ -306,7 +290,6 @@ const AddCar = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 border-base-300">
               <button
                 type="submit"
@@ -325,7 +308,6 @@ const AddCar = () => {
           </form>
         </div>
 
-        {/* Info Footer */}
         <div className="mt-8 text-center">
           <p className="text-sm text-neutral-medium font-body">
             By listing your car, you agree to our{" "}

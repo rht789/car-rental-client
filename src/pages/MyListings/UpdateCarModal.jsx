@@ -41,7 +41,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
   return (
     <dialog open className="modal modal-open">
       <div className="modal-box max-w-2xl bg-base-100 border-2 border-base-300 shadow-2xl">
-        {/* Modal Header */}
         <div className="bg-linear-to-r from-secondary to-secondary/80 -mx-6 -mt-6 px-6 py-4 mb-6">
           <h3 className="font-heading font-bold text-xl text-white">
             Update Car Details
@@ -52,7 +51,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Car Name */}
           <div className="form-control">
             <label className="label py-1">
               <span className="label-text text-neutral font-body font-medium text-sm">
@@ -69,7 +67,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
             />
           </div>
 
-          {/* Description */}
           <div className="form-control">
             <label className="label py-1">
               <span className="label-text text-neutral font-body font-medium text-sm">
@@ -86,9 +83,7 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
             ></textarea>
           </div>
 
-          {/* Category, Price, Status Row */}
           <div className="grid grid-cols-3 gap-3">
-            {/* Category */}
             <div className="form-control">
               <label className="label py-1">
                 <span className="label-text text-neutral font-body font-medium text-sm">
@@ -109,7 +104,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
               </select>
             </div>
 
-            {/* Rent Price */}
             <div className="form-control">
               <label className="label py-1">
                 <span className="label-text text-neutral font-body font-medium text-sm">
@@ -127,7 +121,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
               />
             </div>
 
-            {/* Status */}
             <div className="form-control">
               <label className="label py-1">
                 <span className="label-text text-neutral font-body font-medium text-sm">
@@ -149,9 +142,7 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
             </div>
           </div>
 
-          {/* Location & Image Row */}
-          <div className="grid grid-cols-2 gap-3">
-            {/* Location */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form-control">
               <label className="label py-1">
                 <span className="label-text text-neutral font-body font-medium text-sm">
@@ -168,7 +159,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
               />
             </div>
 
-            {/* Image URL */}
             <div className="form-control">
               <label className="label py-1">
                 <span className="label-text text-neutral font-body font-medium text-sm">
@@ -186,7 +176,6 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
             </div>
           </div>
 
-          {/* Provider Info (Read-only) */}
           <div className="bg-base-200 rounded-lg p-3 border border-base-300">
             <p className="text-xs text-neutral-medium font-body mb-2">
               <strong>Provider:</strong> {car?.providerName} (
@@ -194,8 +183,7 @@ const UpdateCarModal = ({ car, isOpen, onClose, onUpdate }) => {
             </p>
           </div>
 
-          {/* Modal Actions */}
-          <div className="modal-action justify-end gap-3 mt-6">
+          <div className="modal-action gap-3 pt-4">
             <button
               type="button"
               onClick={onClose}

@@ -58,7 +58,6 @@ const FeaturedCars = () => {
   return (
     <section className="py-16 px-6 bg-base-100">
       <div className="max-w-7xl mx-auto">
-        {/* Section Title with Animated Underline */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,14 +80,12 @@ const FeaturedCars = () => {
           </p>
         </motion.div>
 
-        {/* Loading State */}
         {loading && (
           <div className="flex justify-center py-20">
             <Loader />
           </div>
         )}
 
-        {/* Cars Grid */}
         {!loading && cars.length > 0 && (
           <motion.div
             variants={containerVariants}
@@ -110,7 +107,6 @@ const FeaturedCars = () => {
           </motion.div>
         )}
 
-        {/* Empty State */}
         {!loading && cars.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}

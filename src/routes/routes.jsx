@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoutes";
 import MyListings from "../pages/MyListings/MyListings";
 import BrowseCars from "../pages/BrowseCars/BrowseCars";
 import LearnMore from "../pages/LearnMore/LearnMore";
+import CarDetails from "../pages/CarDetails/CarDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/browse",
         Component: BrowseCars,
+      },
+      {
+        path: "/car-details/:id",
+        Component: CarDetails,
       },
       {
         path: "/learn-more",

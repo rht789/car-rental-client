@@ -55,7 +55,6 @@ const HeroBanner = () => {
 
   return (
     <section className="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-neutral">
-      {/* Static Background for smooth transitions */}
       <div className="absolute inset-0 bg-linear-to-br from-neutral via-neutral-focus to-black"></div>
 
       <AnimatePresence mode="wait">
@@ -67,7 +66,6 @@ const HeroBanner = () => {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          {/* Background Image with Parallax Zoom */}
           <motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -79,14 +77,11 @@ const HeroBanner = () => {
               backgroundPosition: "center",
             }}
           >
-            {/* Dark Overlay */}
             <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-transparent"></div>
           </motion.div>
 
-          {/* Content */}
           <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
             <div className="max-w-2xl text-white">
-              {/* Title - Slide from left */}
               <motion.h1
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -96,7 +91,6 @@ const HeroBanner = () => {
                 {slides[currentSlide].title}
               </motion.h1>
 
-              {/* Subtitle - Typewriter effect */}
               <motion.h2
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -106,7 +100,6 @@ const HeroBanner = () => {
                 {slides[currentSlide].subtitle}
               </motion.h2>
 
-              {/* Description - Fade up */}
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -116,7 +109,6 @@ const HeroBanner = () => {
                 {slides[currentSlide].description}
               </motion.p>
 
-              {/* Buttons - Scale in */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -150,7 +142,6 @@ const HeroBanner = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 z-10"
@@ -164,7 +155,6 @@ const HeroBanner = () => {
         <FaChevronRight size={24} />
       </button>
 
-      {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
         {slides.map((_, index) => (
           <button

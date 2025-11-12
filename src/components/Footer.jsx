@@ -6,13 +6,10 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content mt-auto">
-      {/* Gradient accent line at top */}
       <div className="h-1 bg-linear-to-r from-primary to-primary-dark animate-pulse"></div>
 
-      {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-          {/* 1. Brand Section */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
               <img
@@ -30,7 +27,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* 2. Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold font-heading text-neutral uppercase mb-4">
               Quick Links
@@ -60,16 +56,9 @@ const Footer = () => {
                   Login
                 </Link>
               </li>
-              {/* Future private route links will be added here */}
-              {/* 
-                            <li><Link to="/add-car">Add Car</Link></li>
-                            <li><Link to="/my-listings">My Listings</Link></li>
-                            <li><Link to="/my-bookings">My Bookings</Link></li>
-                            */}
             </ul>
           </div>
 
-          {/* 3. Contact Info */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold font-heading text-neutral uppercase mb-4">
               Contact
@@ -95,13 +84,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* 4. Social Media Links */}
           <div className="text-center md:text-left">
             <h3 className="text-lg font-semibold font-heading text-neutral uppercase mb-4">
               Follow Us
             </h3>
             <div className="flex gap-3 justify-center md:justify-start">
-              {/* Facebook */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-base-300 flex items-center justify-center text-neutral hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300"
@@ -110,7 +97,6 @@ const Footer = () => {
                 <FaFacebook className="h-5 w-5" />
               </a>
 
-              {/* Instagram */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-base-300 flex items-center justify-center text-neutral hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300"
@@ -119,7 +105,6 @@ const Footer = () => {
                 <FaInstagram className="h-5 w-5" />
               </a>
 
-              {/* Twitter / X */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-base-300 flex items-center justify-center text-neutral hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300"
@@ -128,7 +113,6 @@ const Footer = () => {
                 <FaTwitter className="h-5 w-5" />
               </a>
 
-              {/* LinkedIn */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-base-300 flex items-center justify-center text-neutral hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300"
@@ -136,28 +120,17 @@ const Footer = () => {
               >
                 <FaLinkedin className="h-5 w-5" />
               </a>
-              {/* Future: Connect to actual social media URLs */}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Divider */}
       <div className="border-t border-base-300"></div>
 
-      {/* Copyright Section */}
       <div className="text-center py-6 px-5">
         <p className="text-sm text-neutral-medium font-body">
           © 2025 RentWheels. All rights reserved.
         </p>
-        {/* Future: Add Terms & Conditions and Privacy Policy links */}
-        {/* 
-                <div className="mt-2 space-x-4">
-                    <button className="text-sm hover:text-primary transition-colors">Terms & Conditions</button>
-                    <button className="text-sm hover:text-primary transition-colors">Privacy Policy</button>
-                </div>
-                */}
-        {/* Future: Auto-update year dynamically: {new Date().getFullYear()} */}
       </div>
     </footer>
   );

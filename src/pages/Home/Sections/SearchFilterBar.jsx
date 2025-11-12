@@ -14,7 +14,6 @@ const SearchFilterBar = () => {
         className="max-w-5xl mx-auto bg-white/80 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-base-300 p-6 md:p-8"
       >
         <div className="flex items-center gap-4">
-          {/* Search Input - Full Width */}
           <div className="relative flex-1">
             <input
               type="text"
@@ -24,7 +23,6 @@ const SearchFilterBar = () => {
             <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-medium text-xl" />
           </div>
 
-          {/* Search Button */}
           <Link to="/browse">
             <motion.button
               whileHover={{
