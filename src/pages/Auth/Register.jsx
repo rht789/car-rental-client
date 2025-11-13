@@ -1,5 +1,5 @@
 import React, { useState, useEffect, use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, useLocation } from "react-router";
 import {
   HiMail,
   HiLockClosed,
@@ -17,6 +17,7 @@ const Register = () => {
   const { createUser, loginUserwithGoogle, updateUserProfile } =
     use(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     document.title = "Register - RentWheels";
@@ -63,7 +64,7 @@ const Register = () => {
         updateUserProfile(name, photoURL)
           .then(() => {
             toast.success("Registration successful!");
-            navigate("/");
+            navigate(`${location.state ? location.state : "/"}`);
           })
           .catch((error) => {
             toast.error(error.message);
@@ -78,6 +79,7 @@ const Register = () => {
     loginUserwithGoogle()
       .then(() => {
         toast.success("Registration successful!");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         toast.error(error.message);
