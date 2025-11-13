@@ -84,7 +84,9 @@ const CarDetails = () => {
               Browse Cars
             </Link>
             <FaChevronRight className="text-neutral-light text-xs" />
-            <span className="text-neutral font-medium truncate">{car.carName}</span>
+            <span className="text-neutral font-medium truncate">
+              {car.carName}
+            </span>
           </div>
         </motion.div>
 
